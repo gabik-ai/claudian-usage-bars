@@ -1,0 +1,9 @@
+{
+  "id": "claudian-usage",
+  "name": "Claudian Usage Bars",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Live Claude Max usage bars in Claudian header (5h, 7d, Sonnet)",
+  "author": "Claudian",
+  "isDesktopOnly": true
+}
