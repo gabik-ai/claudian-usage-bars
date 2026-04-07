@@ -6,9 +6,9 @@ Live Claude Max usage bars in the Claudian header — zeigt 5h, 7d und Sonnet-Li
 
 ## Voraussetzungen
 
-- [Claudian](https://github.com/gabrielsimkin/claudian) muss installiert und aktiv sein
-- Claude Code muss auf dem Mac installiert sein (das Plugin liest den lokalen Token aus dem macOS Keychain)
-- macOS only
+- [Claudian](https://github.com/gabik-ai/claudian) muss installiert und aktiv sein
+- Claude Code muss installiert sein
+- **macOS only** (Token-Zugriff via macOS Keychain)
 
 ## Installation via BRAT
 
@@ -17,7 +17,7 @@ Live Claude Max usage bars in the Claudian header — zeigt 5h, 7d und Sonnet-Li
 3. Diese URL einfügen:
 
 ```
-https://github.com/gabrielsimkin/claudian-usage-bars
+https://github.com/gabik-ai/claudian-usage-bars
 ```
 
 4. **"Add Plugin"** klicken
@@ -37,8 +37,8 @@ Hover über die Bars zeigt die genaue Reset-Zeit.
 
 ## Farben
 
-- 🟢 Grün: unter 50%
-- 🟡 Gelb: 50–80%
+- 🟣 Lila: unter 50%
+- 🟡 Gold: 50–80%
 - 🔴 Rot: über 80%
 
 ## Autor
