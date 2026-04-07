@@ -116,11 +116,22 @@ class ClaudianUsagePlugin extends Plugin {
 
   getAccessToken() {
     try {
-      const raw = execSync(
-        'security find-generic-password -s "Claude Code-credentials" -w',
-        { encoding: 'utf8', timeout: 5000 }
-      );
-      return JSON.parse(raw.trim()).claudeAiOauth.accessToken;
+      if (process.platform === 'darwin') {
+        // macOS: read from Keychain
+        const raw = execSync(
+          'security find-generic-password -s "Claude Code-credentials" -w',
+          { encoding: 'utf8', timeout: 5000 }
+        );
+        return JSON.parse(raw.trim()).claudeAiOauth.accessToken;
+      } else {
+        // Windows / Linux: read from ~/.claude/.credentials.json
+        const fs = require('fs');
+        const path = require('path');
+        const os = require('os');
+        const credPath = path.join(os.homedir(), '.claude', '.credentials.json');
+        const raw = fs.readFileSync(credPath, 'utf8');
+        return JSON.parse(raw).claudeAiOauth.accessToken;
+      }
     } catch (e) {
       console.error('Claudian Usage: token error', e.message);
       return null;
